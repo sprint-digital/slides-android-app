@@ -1,0 +1,9 @@
+# SprintDigital Presentation Photos
+- Intro: Show presentations slides, automatically start after turning on the TV (delay 60s)
+- BenQ smart TV protal: https://smartdms.benq.com/ES/public/
+password
+- BenQ smart TV access: twomatesmedia/secret2018
+- Release Key: ./2mmAndroid.jks
+- Release Key Alias: twomatesmedia
+- KeyPassword: secret
+- stroePassword: secret

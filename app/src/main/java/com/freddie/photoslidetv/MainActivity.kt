@@ -16,15 +16,18 @@ import kotlin.concurrent.schedule
 class MainActivity : AppCompatActivity() {
 
     private val photos = intArrayOf(
-        R.drawable.photo_1,
-        R.drawable.photo_2,
-        R.drawable.photo_3,
-        R.drawable.photo_4,
-        R.drawable.photo_5
+        R.drawable.launchevent_1,
+        R.drawable.launchevent_2,
+        R.drawable.launchevent_3,
+        R.drawable.launchevent_4,
+        R.drawable.launchevent_5,
+        R.drawable.launchevent_6
     )
 
 
     var index = 0
+
+    val timeInterval = 5000L   //ms
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onPageSelected(position: Int) {
                 val nextPosition = position + direction
-                Timer().schedule(2000) {
+                Timer().schedule(timeInterval) {
                     runOnUiThread {
                         viewPager.setCurrentItem(nextPosition, true)
                     }
@@ -75,7 +78,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
         viewPager.adapter = ScreenSlidePagerAdapter(supportFragmentManager)
-        viewPager.setCurrentItem(1, true)
+        Timer().schedule(timeInterval)
+        {
+            runOnUiThread{
+                viewPager.setCurrentItem(1, true)
+            }
+        }
     }
 
 
